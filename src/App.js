@@ -1,5 +1,9 @@
 import React from "react";
 import "./style.css";
+import {createStore} from "redux"
+import {todoApp} from "./reducers/todoApp"
+
+let store  = createStore(todoApp);
 
 export default function App() {
   return (
