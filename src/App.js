@@ -3,8 +3,8 @@ import "./style.css";
 import {createStore} from "redux"
 import {todoApp} from "./reducers/todoApp"
 import {useSelector , useDispatch} from "react-redux";
-
-
+import {addToDo} from "./actions/addToDo";
+import {toggleToDo} from "./actions/toggleToDo"
 
 var nextToDoID=0 ;
 

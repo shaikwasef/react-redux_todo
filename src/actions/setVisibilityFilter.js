@@ -1,5 +1,5 @@
 export const setVisibilityFilter = () => {
   return {
-    type: "TOGGLE_TODO" 
+    type: "SET_VISIBILITY_FILTER" 
   };
 }
