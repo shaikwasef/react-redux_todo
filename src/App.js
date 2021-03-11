@@ -6,7 +6,7 @@ import {useDispatch} from "react-redux";
 
 let store  = createStore(todoApp);
 
-var nextToDoId = 0 ;
+var nextToDoID ;
 
 export default function App() {
 
