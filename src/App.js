@@ -10,16 +10,12 @@ var nextToDoID=0 ;
 
 export default function App(){
   const todo = useSelector(state => state.todos);
+  console.log(todo);
   const dispatch = useDispatch();
   return (
     <div>
-      <button onClick = {() => store.dispatch({
-        type : "ADD_TODO",
-        text : "Test" ,
-        id : nextToDoID++ 
-      })}>Add Todo</button>
+      <button onClick = {() => dispatch(addToDo())}>Add Todo</button>
       <ul>11
-        {list}
       </ul>
     </div>
   );
