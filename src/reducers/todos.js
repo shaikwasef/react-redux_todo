@@ -8,7 +8,7 @@ const todo = (state,action) => {
     }
     case "TOGGLE_TODO" :
         if(action.id == state.id){
-          return {...state,completed = !state.completed}
+          return {...state,completed : !state.completed}
         }
         return state;
     }
