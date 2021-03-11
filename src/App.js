@@ -5,14 +5,12 @@ import {todoApp} from "./reducers/todoApp"
 import {useSelector , useDispatch} from "react-redux";
 
 
-let store  = createStore(todoApp ,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-store.subscribe(App);
+
 var nextToDoID=0 ;
 
-
-export default function App() {
-  const todos = store.getState().todos;
-  console.log(todos);
+export default function App(){
+  const todo = useSelector(state => state.todos);
+  const dispatch = useDispatch();
   return (
     <div>
       <button onClick = {() => store.dispatch({
@@ -20,8 +18,8 @@ export default function App() {
         text : "Test" ,
         id : nextToDoID++ 
       })}>Add Todo</button>
-      <ul>
-      
+      <ul>11
+        {list}
       </ul>
     </div>
   );

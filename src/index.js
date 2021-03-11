@@ -4,7 +4,12 @@ import App from "./App";
 import {createStore} from "redux"
 import {todoApp} from "./reducers/todoApp"
 import {useDispatch} from "react-redux";
+import {Provider} from "react-redux" ;
 
-let store  = createStore(todoApp);
 
-ReactDOM.render(<App todos = {store.getState().todos} />, document.getElementById("root"));
+let store  = createStore(todoApp ,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+ReactDOM.render(
+  <Provider store = {store}>
+  <App/>
+  </Provider>, document.getElementById("root"));
