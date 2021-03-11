@@ -9,7 +9,7 @@ store.subscribe(()=>console.log(store.getState().todos));
 var nextToDoID=0 ;
 
 
-export default function App() {
+export default function App(props) {
   
   return (
     <div>
@@ -19,7 +19,7 @@ export default function App() {
         id : nextToDoID++ 
       })}>Add Todo</button>
       <ul>
-       {store.getState().todos.map((todo) => {return (<li>hi</li>)})}
+       {props.todos.forEach((todo) => {alert(hi)})}
       </ul>
     </div>
   );
