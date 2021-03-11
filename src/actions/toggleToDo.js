@@ -1,5 +1,6 @@
-export const toggleToDo = () => {
+export const toggleToDo = (id) => {
   return {
-    type: "TOGGLE_TODO" 
+    type: "TOGGLE_TODO" ,
+    id : id
   };
 }
