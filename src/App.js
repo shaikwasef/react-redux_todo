@@ -22,6 +22,7 @@ export default function App(){
     <div>
       <input ref={inputField} />
       <button onClick = {() => {dispatch(addToDo(inputField.current.value , nextToDoID++));
+      inputField.current.value = ""
       }} >Add Todo</button>
       <ul>
       {list}
