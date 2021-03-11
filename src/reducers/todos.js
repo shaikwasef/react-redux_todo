@@ -14,14 +14,6 @@ const todo = (state,action) => {
     }
 }
 
-const visibilityFilter = (state = 'SHOW ALL', action) => {
-  switch(action.type){
-    case "SET_VISIBILITY_FILTER";
-      return action.filter;
-    default :
-      return state ;
-  }
-}
 
 const todos = (state =[] ,action) => {
   switch(action.type){
@@ -33,5 +25,16 @@ const todos = (state =[] ,action) => {
       return state ;
   }
 }
+
+const visibilityFilter = (state = 'SHOW ALL', action) => {
+  switch(action.type){
+    case "SET_VISIBILITY_FILTER":
+      return action.filter;
+    default :
+      return state ;
+  }
+}
+
+
 
 export default todos ;
