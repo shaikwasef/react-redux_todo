@@ -1,6 +1,7 @@
-export const addToDo = () => {
+export const addToDo = (text,id) => {
   return {
     type: "ADD_TODO" ,
-    text : "test"
+    text : text ,
+    id : id
   };
 }

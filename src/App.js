@@ -5,12 +5,14 @@ import {todoApp} from "./reducers/todoApp"
 import {useSelector , useDispatch} from "react-redux";
 import {addToDo} from "./actions/addToDo";
 import {toggleToDo} from "./actions/toggleToDo"
+import {useRef} from "react";
 
 var nextToDoID=0 ;
 
 export default function App(){
-  const todos = useSelector(state => state.todos);
-  const list = todos.map((todo) =>  {
+  const inputField = React.useRef(null);
+  const todoItems = useSelector(state => state.todos);
+  const list = todoItems.map((todo) =>  {
     return (
       <li key = {todo.id}>{todo.text}</li>
     );
@@ -18,7 +20,9 @@ export default function App(){
   const dispatch = useDispatch();
   return (
     <div>
-      <button onClick = {() => dispatch(addToDo())}>Add Todo</button>
+      <input ref={inputField} />
+      <button onClick = {() => {dispatch(addToDo(inputField.current.value , nextToDoID++));
+      }} >Add Todo</button>
       <ul>
       {list}
       </ul>
