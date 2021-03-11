@@ -9,14 +9,6 @@ let store  = createStore(todoApp ,window.__REDUX_DEVTOOLS_EXTENSION__ && window.
 var nextToDoID=0 ;
 
 export default function App() {
-
-  console.log(store.getState());
-  
-  const list = store.getState().todos.map((todo) => {
-    return (
-      <li key = {todo.id}>{todo.text}</li> 
-    );
-  })
   return (
     <div>
       <button onClick = {() => store.dispatch({
@@ -24,9 +16,9 @@ export default function App() {
         text : "Test" ,
         id : nextToDoID++ 
       })}>Add Todo</button>
-      <ul>
-        {list}
-      </ul>
+
+      {list}
+
     </div>
   );
 }
