@@ -2,15 +2,17 @@ import React from "react";
 import "./style.css";
 import {createStore} from "redux"
 import {todoApp} from "./reducers/todoApp"
-import {useDispatch} from "react-redux";
+import {useSelector , useDispatch} from "react-redux";
+
 
 let store  = createStore(todoApp ,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-store.subscribe(()=>console.log(store.getState().todos));
+store.subscribe(App);
 var nextToDoID=0 ;
 
 
-export default function App(props) {
-  
+export default function App() {
+  const todos = store.getState().todos;
+  console.log(todos);
   return (
     <div>
       <button onClick = {() => store.dispatch({
@@ -19,7 +21,7 @@ export default function App(props) {
         id : nextToDoID++ 
       })}>Add Todo</button>
       <ul>
-       {props.todos.forEach((todo) => {alert(hi)})}
+      
       </ul>
     </div>
   );
