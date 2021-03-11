@@ -9,13 +9,18 @@ import {toggleToDo} from "./actions/toggleToDo"
 var nextToDoID=0 ;
 
 export default function App(){
-  const todo = useSelector(state => state.todos);
-  console.log(todo);
+  const todos = useSelector(state => state.todos);
+  const list = todos.map((todo) =>  {
+    return (
+      <li key = {todo.id}>{todo.text}</li>
+    );
+  });
   const dispatch = useDispatch();
   return (
     <div>
       <button onClick = {() => dispatch(addToDo())}>Add Todo</button>
-      <ul>11
+      <ul>
+      {list}
       </ul>
     </div>
   );
