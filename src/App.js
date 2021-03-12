@@ -1,6 +1,5 @@
 import React from "react";
 import "./style.css";
-import {createStore} from "redux"
 import {todoApp} from "./reducers/todoApp"
 import {useSelector , useDispatch} from "react-redux";
 import {addToDo} from "./actions/addToDo";
@@ -28,16 +27,10 @@ export default function App(){
       }    
   }
   const visibleTodo = setVisibility(todoItems,visibility);
-  const list = visibleTodo.map((todo) =>  {
+  const todo = visibleTodo.map((todo) =>  {
     return (
-      <li key = {todo.id} onClick = {() =>
-      {dispatch(toggleToDo(todo.id))}}
-      style={{
-                  textDecoration:
-                    todo.completed ?
-                      'line-through' :
-                      'none'
-                }} >{todo.text}</li>
+      <todo key = {todo.id} completed = {todo.completed} onClick = {() =>
+      {dispatch(toggleToDo(todo.id))}} />
     );
   });
   const dispatch = useDispatch();
@@ -57,7 +50,7 @@ export default function App(){
       inputField.current.value = ""
       }} >Add Todo</button>
       <ul>
-      {list}
+      {todo}
       </ul>
       <div>
         SHOW : {filter("ALL","ALL")} {filter("COMPLETED","COMPLETED")} {filter("INCOMPLETE","INCOMPLETE")}
