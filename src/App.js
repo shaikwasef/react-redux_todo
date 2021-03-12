@@ -1,3 +1,4 @@
+//import files
 import React from "react";
 import "./style.css";
 import {todoApp} from "./reducers/todoApp"
@@ -8,6 +9,7 @@ import {useRef} from "react";
 import {setVisibilityFilter} from "./actions/setVisibilityFilter"
 import TodoList from "./TodoList"
 
+//id for new todo item (updated in addTodo button)
 var nextToDoID=0 ;
 
 export default function App(){
