@@ -2,7 +2,9 @@ import React from "react";
 import "./style.css";
 import { useRef } from "react";
 
-let nextToDoID = 0;
+
+//id for new todo item (updated in  button after each submit)
+var nextToDoID = 0;
 
 export default function AddTodo({onButtonClick}) {
   const inputField = useRef("");

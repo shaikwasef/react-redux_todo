@@ -10,8 +10,6 @@ import { setVisibilityFilter } from "./actions/setVisibilityFilter";
 import TodoList from "./TodoList";
 import AddTodo from "./AddTodo";
 
-//id for new todo item (updated in addTodo button)
-var nextToDoID = 0;
 
 export default function App() {
   //list of todoItems from todos reducer
