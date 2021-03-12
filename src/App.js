@@ -15,13 +15,13 @@ export default function App(){
   const todoItems = useSelector(state => state.todos);
   const visibility = useSelector(state => state.visibilityFilter);
   const setVisibility  = (todoItems,visibility) => {
-      if(visibility == "all"){
+      if(visibility == "ALL"){
         return todoItems ;
-      }else if (visibility == "completed"){
+      }else if (visibility == "COMPLETED"){
         return todoItems.filter(
           todoItems => todoItems.completed == true
         )
-      }else if(visibility  == "incomplete"){
+      }else if(visibility  == "INCOMPLETE"){
         return todoItems.filter(
           todoItems => todoItems.completed == false 
         )
@@ -58,7 +58,7 @@ export default function App(){
       {list}
       </ul>
       <div>
-        SHOW : {filter("ALL","ALL")} {filter("COMPLETED","ALL")} {filter("INCOMPLETE","INCOMPLETE")}
+        SHOW : {filter("ALL","ALL")} {filter("COMPLETED","COMPLETED")} {filter("INCOMPLETE","INCOMPLETE")}
       </div>
     </div>
   );
