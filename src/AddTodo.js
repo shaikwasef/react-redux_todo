@@ -15,7 +15,7 @@ export default function AddTodo({onAddtodoClick}) {
       <input ref={inputField} />
       <button
         onClick={() => {
-          dispatch(inputField.current.value, nextToDoID++);
+          dispatch(addToDo(inputField.current.value, nextToDoID++));
           inputField.current.value = "";
         }}
       >
