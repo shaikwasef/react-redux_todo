@@ -55,7 +55,7 @@ export default function App() {
   return (
     <div>
       <AddTodo
-      onButtonClick={(input,id) => {
+      onAddtodoClick={(input,id) => {
           dispatch(addToDo(input,id))}}
       />
 
