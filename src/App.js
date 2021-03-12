@@ -38,6 +38,8 @@ export default function App(){
         )
       }    
   }
+
+  //visible Todo item based on the visibility filter reducer
   const visibleTodo = setVisibility(todoItems,visibility);
   
   
