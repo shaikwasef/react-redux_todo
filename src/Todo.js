@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-export default function todo({onClick,completed,text}) {
+export default function Todo({onClick,completed,text}) {
   return (
     <li onClick = {onClick} style={{
                   textDecoration:
