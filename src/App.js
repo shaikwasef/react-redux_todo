@@ -42,8 +42,7 @@ export default function App(){
   //visible Todo item based on the visibility filter reducer
   const visibleTodo = setVisibility(todoItems,visibility);
   
-  
-
+  // Filter component showing ALL , COMPLETED and INCOMPLETE
   const filter = (text,filter) => {
     if(visibility == filter){
       return <span>{text}</span>
@@ -52,6 +51,8 @@ export default function App(){
       <a href ='#' onClick = {() => {dispatch(setVisibilityFilter(filter))}}>{text}</a>
     );
   }
+
+  //App components
   return (
     <div>
       <input ref={inputField} />
