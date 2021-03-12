@@ -2,6 +2,8 @@ import React from "react";
 import "./style.css";
 import Todo from "./Todo"
 
+
+//TodoList component 
 export default function TodoList({visibleTodo,onTodoClick}) {
   return (
     <ul>
