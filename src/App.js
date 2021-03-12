@@ -21,9 +21,7 @@ export default function App() {
 
   return (
     <div>
-      <AddTodo
-
-      />
+      <AddTodo/>
 
       <TodoList/>
       <div>
