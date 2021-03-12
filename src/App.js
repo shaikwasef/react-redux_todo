@@ -9,6 +9,7 @@ import { useRef } from "react";
 import { setVisibilityFilter } from "./actions/setVisibilityFilter";
 import TodoList from "./TodoList";
 import AddTodo from "./AddTodo";
+import Filter from  "./Filter";
 
 
 export default function App() {
@@ -34,23 +35,6 @@ export default function App() {
   //visible Todo item based on the visibility filter reducer
   const visibleTodo = setVisibility(todoItems, visibility);
 
-  // Filter component showing ALL , COMPLETED and INCOMPLETE
-  const filter = (text, filter) => {
-    if (visibility == filter) {
-      return <span>{text}</span>;
-    }
-    return (
-      <a
-        href="#"
-        onClick={() => {
-          dispatch(setVisibilityFilter(filter));
-        }}
-      >
-        {text}
-      </a>
-    );
-  };
-
   //App components
   return (
     <div>
@@ -66,8 +50,9 @@ export default function App() {
         }}
       />
       <div>
-        SHOW : {filter("ALL", "ALL")} {filter("COMPLETED", "COMPLETED")}{" "}
-        {filter("INCOMPLETE", "INCOMPLETE")}
+        SHOW : 
+        <Filter visibility = {visibility} text = 'ALL' filter = " ALL" onFilterClick = {(filter) => {dispatch(setVisibilityFilter(filter))}}/>
+        
       </div>
     </div>
   );
