@@ -41,7 +41,9 @@ export default function App(){
       <ul>
       {list}
       </ul>
-      
+      <div>
+        SHOW : {filter("ALL","all")} {filter("COMPLETED","completed")} {filter("INCOMPLETE","incomplete")}
+      </div>
     </div>
   );
 }
