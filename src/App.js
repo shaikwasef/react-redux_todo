@@ -53,10 +53,11 @@ export default function App() {
       />
       <div>
         SHOW : 
+        <div>
         <Filter visibility = {visibility} text = 'ALL' filter = 'ALL' onFilterClick = {(filter) => {dispatch(setVisibilityFilter(filter))}}/>
         <Filter visibility = {visibility} text = 'COMPLETED' filter = 'COMPLETED' onFilterClick = {(filter)=> {dispatch(setVisibilityFilter(filter))}}/>
         <Filter visibility = {visibility} text = 'INCOMPLETE' filter ='INCOMPLETE' onFilterClick = {(filter) => {dispatch(setVisibilityFilter(filter))}}/>
-        
+        </div>
       </div>
     </div>
   );
