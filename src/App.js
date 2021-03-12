@@ -24,6 +24,7 @@ export default function App(){
   // dispatch hook 
   const dispatch = useDispatch();
 
+  //setVisibility for todoItems depending on the visibility filter
   const setVisibility  = (todoItems,visibility) => {
       if(visibility == "ALL"){
         return todoItems ;
