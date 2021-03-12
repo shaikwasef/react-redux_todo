@@ -28,11 +28,12 @@ export default function App(){
       }    
   }
   const visibleTodo = setVisibility(todoItems,visibility);
+  
   const todo = visibleTodo.map((todo) =>  {
     debugger
     return (
-      <Todo key = {todo.id} completed = {todo.completed} onClick = {() =>
-      {dispatch(toggleToDo(todo.id))}} text = {todo.text} />
+      <Todo key = {todo.id}  onClick = {() =>
+      {dispatch(toggleToDo(todo.id))}} {...todo} />
     );
   });
   const dispatch = useDispatch();
