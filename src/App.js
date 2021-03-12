@@ -13,7 +13,7 @@ var nextToDoID=0 ;
 export default function App(){
   const inputField = React.useRef(null);
   const todoItems = useSelector(state => state.todos);
-  const visibility = useSelector(state => state.setVisibilityFilter);
+  const visibility = useSelector(state => state.visibilityFilter);
   const setVisibility  = (todoItems,visibility) => {
       if(visibility == "all"){
         return todoItems ;
