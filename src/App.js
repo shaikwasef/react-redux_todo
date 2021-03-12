@@ -22,8 +22,6 @@ export default function App() {
   return (
     <div>
       <AddTodo
-      onAddtodoClick={(input,id) => {
-          dispatch(addToDo(input,id))}}
       />
 
       <TodoList/>
