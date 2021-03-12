@@ -13,30 +13,29 @@ import Filter from  "./Filter";
 
 
 export default function App() {
-  //list of todoItems from todos reducer
-  const todoItems = useSelector(state => state.todos);
-  //visibility Filter from visibilityFilter reducer
+  // //list of todoItems from todos reducer
+  // const todoItems = useSelector(state => state.todos);
+  // //visibility Filter from visibilityFilter reducer
   const visibility = useSelector(state => state.visibilityFilter);
 
-  // dispatch hook
+  // // dispatch hook
   const dispatch = useDispatch();
 
-  //setVisibility for todoItems depending on the visibility filter
-  const setVisibility = (todoItems, visibility) => {
-    debugger;
-    if (visibility == "ALL") {
-      return todoItems;
-    } else if (visibility == "COMPLETED") {
-      return todoItems.filter(todoItems => todoItems.completed == true);
-    } else if (visibility == "INCOMPLETE") {
-      return todoItems.filter(todoItems => todoItems.completed == false);
-    }
-  };
+  // //setVisibility for todoItems depending on the visibility filter
+  // const setVisibility = (todoItems, visibility) => {
+  //   debugger;
+  //   if (visibility == "ALL") {
+  //     return todoItems;
+  //   } else if (visibility == "COMPLETED") {
+  //     return todoItems.filter(todoItems => todoItems.completed == true);
+  //   } else if (visibility == "INCOMPLETE") {
+  //     return todoItems.filter(todoItems => todoItems.completed == false);
+  //   }
+  // };
 
-  console.log(visibility);
-  //visible Todo item based on the visibility filter reducer
-  const visibleTodo = setVisibility(todoItems, visibility);
-  console.log(visibleTodo);
+  // //visible Todo item based on the visibility filter reducer
+  // const visibleTodo = setVisibility(todoItems, visibility);
+  // console.log(visibleTodo);
   //App components
   return (
     <div>
@@ -45,12 +44,7 @@ export default function App() {
           dispatch(addToDo(input,id))}}
       />
 
-      <TodoList
-        visibleTodo={visibleTodo}
-        onTodoClick={id => {
-          dispatch(toggleToDo(id));
-        }}
-      />
+      <TodoList/>
       <div>
         SHOW : 
         <div>
