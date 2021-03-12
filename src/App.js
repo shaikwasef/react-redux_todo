@@ -16,7 +16,17 @@ export default function App(){
   const visibility = useSelector(state => state.setVisibilityFilter);
   const visibileTodo = [] ;
   const setVisibility  = (todoItems,visibility) => {
-      
+      if(visibility == "all"){
+        return todoItems ;
+      }else if (visibility == "completed"){
+        return todoItems.filter(
+          todoItems => todoItems.completed == true
+        )
+      }else if(visbility == "incomplete"){
+        return todoItems.filter(
+          todoItems => todoItems.completed == false 
+        )
+      }    
   }
   const list = todoItems.map((todo) =>  {
     return (

@@ -26,7 +26,7 @@ export const todos = (state =[] ,action) => {
   }
 }
 
-export const visibilityFilter = (state = 'SHOW ALL', action) => {
+export const visibilityFilter = (state = 'all', action) => {
   switch(action.type){
     case "SET_VISIBILITY_FILTER":
       return action.filter;
