@@ -2,26 +2,20 @@ import React from "react";
 import "./style.css";
 
 export default function Filter({visibility,text,filter,onFilterClick}){
-    const display = (text) => { return (<div>{text}</div>
-    );}
-       
-    
+    const display = (visibility,text, filter,onFilterClick) => {
+    if (visibility == filter) {
+      return <span>{text}</span>;
+    }
+      return (
+        <a
+          href="#"
+          onClick ={(filter) => {onFilterClick(filter)}}>
+          {text}
+        </a> 
+      );
+    };
     return (
     <div>
-    {display}
+    {display(visibility,filter,text,onFilterClick)} 
     </div>);
 }
-
-// debugger
-//       if (visibility == filter) {
-//         return <span>{text}</span>;
-//       }
-//       else  if(visibility != filter)
-
-
-// {return (
-//         <a
-//           href="#"
-//           onClick={(filter) => onFilterClick(filter)}>
-//           {text}
-//         </a> );

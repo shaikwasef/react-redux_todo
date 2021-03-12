@@ -23,6 +23,7 @@ export default function App() {
 
   //setVisibility for todoItems depending on the visibility filter
   const setVisibility = (todoItems, visibility) => {
+    debugger;
     if (visibility == "ALL") {
       return todoItems;
     } else if (visibility == "COMPLETED") {
@@ -34,7 +35,7 @@ export default function App() {
 
   //visible Todo item based on the visibility filter reducer
   const visibleTodo = setVisibility(todoItems, visibility);
-
+  console.log(visibleTodo);
   //App components
   return (
     <div>
@@ -51,7 +52,9 @@ export default function App() {
       />
       <div>
         SHOW : 
-        <Filter visibility = {visibility} text = 'ALL' filter = " ALL" onFilterClick = {(filter) => {dispatch(setVisibilityFilter(filter))}}/>
+        <Filter visibility = {visibility} text = 'ALL' filter = "ALL" onFilterClick = {(filter) => {dispatch(setVisibilityFilter(filter))}}/>
+        <Filter visibility = {visibility} text = 'COMPLETED' filter = "COMPLETED" onFilterClick = {(filter) => {dispatch(setVisibilityFilter(filter))}}/>
+        <Filter visibility = {visibility} text = 'INCOMPLETE' filter = "INCOMPLETE" onFilterClick = {(filter) => {dispatch(setVisibilityFilter(filter))}}/>
         
       </div>
     </div>
