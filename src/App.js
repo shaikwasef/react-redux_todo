@@ -14,8 +14,6 @@ import AddTodo from "./AddTodo";
 var nextToDoID = 0;
 
 export default function App() {
-
-
   //list of todoItems from todos reducer
   const todoItems = useSelector(state => state.todos);
   //visibility Filter from visibilityFilter reducer
@@ -58,8 +56,11 @@ export default function App() {
   //App components
   return (
     <div>
-    <AddTodo OnButtonClick = {(inputvalue,todoId) => {dispatch(addToDo(inputvalue , todoId))}} />
-      
+      <AddTodo
+      onButtonClick={(input,id) => {
+          dispatch(addToDo(input,id))}}
+      />
+
       <TodoList
         visibleTodo={visibleTodo}
         onTodoClick={id => {
