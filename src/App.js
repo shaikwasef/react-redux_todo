@@ -43,7 +43,9 @@ export default function App(){
   const dispatch = useDispatch();
 
   const filter = (text,filter) => {
-
+    if(visibility == filter){
+      return <span>{text}</span>
+    }
     return (
       <a href ='#' onClick = {() => {dispatch(setVisibilityFilter(filter))}}>{text}</a>
     );
