@@ -15,9 +15,15 @@ var nextToDoID=0 ;
 export default function App(){
   // reference for input field
   const inputField = React.useRef(null);
-  
+
+  //list of todoItems from todos reducer
   const todoItems = useSelector(state => state.todos);
+  //visibility Filter from visibilityFilter reducer
   const visibility = useSelector(state => state.visibilityFilter);
+
+  // dispatch hook 
+  const dispatch = useDispatch();
+
   const setVisibility  = (todoItems,visibility) => {
       if(visibility == "ALL"){
         return todoItems ;
@@ -33,7 +39,7 @@ export default function App(){
   }
   const visibleTodo = setVisibility(todoItems,visibility);
   
-  const dispatch = useDispatch();
+  
 
   const filter = (text,filter) => {
     if(visibility == filter){
