@@ -6,7 +6,7 @@ import {addToDo} from "./actions/addToDo";
 import {toggleToDo} from "./actions/toggleToDo"
 import {useRef} from "react";
 import {setVisibilityFilter} from "./actions/setVisibilityFilter"
-import Todo from "./Todo"
+import TodoList from "./TodoList"
 
 var nextToDoID=0 ;
 
@@ -52,9 +52,7 @@ export default function App(){
       <button onClick = {() => {dispatch(addToDo(inputField.current.value , nextToDoID++));
       inputField.current.value = ""
       }} >Add Todo</button>
-      <ul>
-      {todo}
-      </ul>
+      <TodoList visibleTodo = {visibleTodo} onTodoClick = {() => {dispatch(toggleToDo())}}/>
       <div>
         SHOW : {filter("ALL","ALL")} {filter("COMPLETED","COMPLETED")} {filter("INCOMPLETE","INCOMPLETE")}
       </div>

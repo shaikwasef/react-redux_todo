@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import Todo from "./Todo"
 
 export default function Todo({onClick,completed,text}) {
   return (

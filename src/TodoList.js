@@ -1,14 +1,13 @@
 import React from "react";
 import "./style.css";
+import Todo from "./Todo"
 
-export default function Todo({onClick,completed,text}) {
+export default function TodoList({visibileTodo,onTodoClick}) {
   return (
-    <li onClick = {onClick} style={{
-                  textDecoration:
-                    completed ?
-                      'line-through' :
-                      'none'
-                }}>{text}</li>
+    <ul>
+    {visibileTodo.map((todo) => {return  (
+    <Todo key={key.id} onClick = {onTodoClick} {...todo}/>);})}
+    </ul>
   );
 }
 
