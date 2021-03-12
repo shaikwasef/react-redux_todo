@@ -14,8 +14,7 @@ import AddTodo from "./AddTodo";
 var nextToDoID = 0;
 
 export default function App() {
-  // reference for input field
-  const inputField = React.useRef(null);
+
 
   //list of todoItems from todos reducer
   const todoItems = useSelector(state => state.todos);
@@ -59,15 +58,8 @@ export default function App() {
   //App components
   return (
     <div>
-      <input ref={inputField} />
-      <button
-        onClick={() => {
-          dispatch(addToDo(inputField.current.value, nextToDoID++));
-          inputField.current.value = "";
-        }}
-      >
-        Add Todo
-      </button>
+    <AddTodo OnButtonClick = {(inputvalue,todoId) => {dispatch(addToDo(inputvalue , todoId))}} />
+      
       <TodoList
         visibleTodo={visibleTodo}
         onTodoClick={id => {
