@@ -9,7 +9,7 @@ export default function Filter({visibility,text,filter,onFilterClick}){
       return (
         <a
           href="#"
-          onClick ={() => {onFilterClick()}}>
+          onClick ={ () => {onFilterClick(filter)}}>
           {text}
         </a> 
       );
