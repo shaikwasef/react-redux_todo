@@ -13,7 +13,9 @@ import TodoList from "./TodoList"
 var nextToDoID=0 ;
 
 export default function App(){
+  // reference for input field
   const inputField = React.useRef(null);
+  
   const todoItems = useSelector(state => state.todos);
   const visibility = useSelector(state => state.visibilityFilter);
   const setVisibility  = (todoItems,visibility) => {
