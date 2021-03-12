@@ -2,7 +2,8 @@ import React from "react";
 import "./style.css";
 
 export default function Filter({visibility,text,filter,onFilterClick}){
-    const display = <div>{text}</div>
+    const display = (text) => { return (<div>{text}</div>
+    );}
        
     
     return (
