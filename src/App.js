@@ -14,7 +14,6 @@ export default function App(){
   const inputField = React.useRef(null);
   const todoItems = useSelector(state => state.todos);
   const visibility = useSelector(state => state.setVisibilityFilter);
-  const visibileTodo = [] ;
   const setVisibility  = (todoItems,visibility) => {
       if(visibility == "all"){
         return todoItems ;
@@ -22,13 +21,14 @@ export default function App(){
         return todoItems.filter(
           todoItems => todoItems.completed == true
         )
-      }else if(visbility == "incomplete"){
+      }else if(visibility  == "incomplete"){
         return todoItems.filter(
           todoItems => todoItems.completed == false 
         )
       }    
   }
-  const list = todoItems.map((todo) =>  {
+  const visibleTodo = setVisibility(todoItems,visibility);
+  const list = visibleTodo.map((todo) =>  {
     return (
       <li key = {todo.id} onClick = {() =>
       {dispatch(toggleToDo(todo.id))}}
