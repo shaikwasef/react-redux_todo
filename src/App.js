@@ -6,6 +6,7 @@ import {useSelector , useDispatch} from "react-redux";
 import {addToDo} from "./actions/addToDo";
 import {toggleToDo} from "./actions/toggleToDo"
 import {useRef} from "react";
+import {setVisibilityFilter} from "./actions/setVisibilityFilter"
 
 var nextToDoID=0 ;
 
@@ -25,6 +26,12 @@ export default function App(){
     );
   });
   const dispatch = useDispatch();
+
+  const filter = (text,filter) => {
+    return (
+      <a href ='#' onClick = {() => {dispatch(setVisibilityFilter(filter))}}>{text}</a>
+    );
+  }
   return (
     <div>
       <input ref={inputField} />
@@ -34,6 +41,7 @@ export default function App(){
       <ul>
       {list}
       </ul>
+      
     </div>
   );
 }
