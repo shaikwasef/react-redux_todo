@@ -14,8 +14,9 @@ export default function App(){
   const inputField = React.useRef(null);
   const todoItems = useSelector(state => state.todos);
   const visibility = useSelector(state => state.setVisibilityFilter);
-  const setVisibility = () => {
-    
+  const visibileTodo = [] ;
+  const setVisibility  = (todoItems,visibility) => {
+      
   }
   const list = todoItems.map((todo) =>  {
     return (
