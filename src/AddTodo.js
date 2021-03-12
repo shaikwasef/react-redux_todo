@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import { useRef } from "react";
 import {useSelector,useDispatch} from  "react-redux"
-import addToDo from "./action/addToDo";
+import addToDo from "./actions/addToDo";
 
 //id for new todo item (updated in  button after each submit)
 var nextToDoID = 0;
