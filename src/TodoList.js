@@ -2,11 +2,11 @@ import React from "react";
 import "./style.css";
 import Todo from "./Todo"
 
-export default function TodoList({visibileTodo,onTodoClick}) {
+export default function TodoList({visibleTodo,onTodoClick}) {
   return (
     <ul>
-    {visibileTodo.map((todo) => {return  (
-    <Todo key={key.id} onClick = {onTodoClick} {...todo}/>);})}
+    {visibleTodo.map((todo) => {return  (
+    <Todo key={todo.id} onClick = {onTodoClick(todo.id)} {...todo}/>);})}
     </ul>
   );
 }

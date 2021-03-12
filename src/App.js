@@ -29,13 +29,6 @@ export default function App(){
   }
   const visibleTodo = setVisibility(todoItems,visibility);
   
-  const todo = visibleTodo.map((todo) =>  {
-    debugger
-    return (
-      <Todo key = {todo.id}  onClick = {() =>
-      {dispatch(toggleToDo(todo.id))}} {...todo} />
-    );
-  });
   const dispatch = useDispatch();
 
   const filter = (text,filter) => {
@@ -52,7 +45,7 @@ export default function App(){
       <button onClick = {() => {dispatch(addToDo(inputField.current.value , nextToDoID++));
       inputField.current.value = ""
       }} >Add Todo</button>
-      <TodoList visibleTodo = {visibleTodo} onTodoClick = {() => {dispatch(toggleToDo())}}/>
+      <TodoList visibleTodo = {visibleTodo} onTodoClick = {(id) => {dispatch(toggleToDo(id))}}/>
       <div>
         SHOW : {filter("ALL","ALL")} {filter("COMPLETED","COMPLETED")} {filter("INCOMPLETE","INCOMPLETE")}
       </div>
