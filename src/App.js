@@ -43,6 +43,7 @@ export default function App(){
   const dispatch = useDispatch();
 
   const filter = (text,filter) => {
+
     return (
       <a href ='#' onClick = {() => {dispatch(setVisibilityFilter(filter))}}>{text}</a>
     );
@@ -57,7 +58,7 @@ export default function App(){
       {list}
       </ul>
       <div>
-        SHOW : {filter("ALL","all")} {filter("COMPLETED","completed")} {filter("INCOMPLETE","incomplete")}
+        SHOW : {filter("ALL","ALL")} {filter("COMPLETED","ALL")} {filter("INCOMPLETE","INCOMPLETE")}
       </div>
     </div>
   );
